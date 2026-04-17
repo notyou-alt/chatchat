@@ -1,0 +1,559 @@
+/* =========================
+   ADMIN BASE LAYOUT (SAME AS BEFORE)
+========================= */
+.admin-container {
+  padding: 24px;
+  background: radial-gradient(circle at center, #050914, #070f22);
+  min-height: 100vh;
+}
+
+/* TITLE */
+.admin-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #fff, #4c8dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================
+   NAVIGATION (SAME)
+========================= */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #0a1224;
+  border: 2px solid #4c8dff;
+  color: #d9f7ff;
+  transition: 0.25s;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  border-color: #00f0ff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #3b82ff, #1d4ed8);
+  border-color: #00f0ff;
+  color: white;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   CARD (SAME)
+========================= */
+.card {
+  background: #0d1730;
+  border: 2px solid #4c8dff;
+  padding: 18px;
+  margin: 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   INPUT, SELECT, TEXTAREA (SAME + EXTEND)
+========================= */
+.card input,
+.card select,
+.card textarea,
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #4c8dff;
+  background: #0a1224;
+  color: #d9f7ff;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.card input:focus,
+.card select:focus,
+.card textarea:focus,
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #00f0ff;
+  box-shadow: 0 0 6px #00f0ff;
+}
+
+/* =========================
+   BUTTONS (SAME)
+========================= */
+.card button,
+.modal-buttons button {
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.btn + .btn {
+  margin-left: 6px;
+}
+
+.btn-danger {
+  background: #ff3b3b;
+  border: 2px solid #ff6b6b;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #ff1a1a;
+  transform: scale(1.02);
+  box-shadow: 0 0 6px #ff3b3b;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #3b82ff, #1d4ed8);
+  color: white;
+  border: 2px solid #00f0ff;
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px #3b82ff;
+}
+
+.btn-warning {
+  background: #ffaa33;
+  border: 2px solid #ffcc66;
+  color: #1e1e2f;
+}
+
+.btn-warning:hover {
+  background: #ff9911;
+}
+
+.btn-secondary {
+  background: #2c3e66;
+  border: 1px solid #4c8dff;
+  color: #d9f7ff;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82ff, #1d4ed8);
+  border: 1px solid #00f0ff;
+  color: white;
+}
+
+/* =========================
+   TABLE (SAME)
+========================= */
+
+/* =========================
+   PERBAIKAN TABEL LOGS
+========================= */
+/* Tabel logs: lebar fleksibel sesuai konten, dengan gap antar baris */
+.card .table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* gap antar baris 8px */
+  margin-bottom: 8px;
+}
+
+.card .table th,
+.card .table td {
+  padding: 14px 12px;
+  vertical-align: middle;
+  background: #0a1224;
+}
+
+/* Header - tanpa gap atas/bawah */
+.card .table th {
+  background: linear-gradient(90deg, rgba(59,130,255,0.55), rgba(29,78,216,0.45));
+  color: white;
+  padding: 12px;
+  border: none;
+  position: sticky;
+  top: 0;
+}
+
+/* Baris data dengan garis pemisah dan bayangan tipis */
+.card .table td {
+  border: none;
+  border-bottom: 1px solid #2f6bff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+/* Hover efek pada baris */
+.card .table tr:hover td {
+  background: #0f2348;
+  transition: 0.2s;
+}
+
+/* Lebar kolom proporsional tanpa fixed */
+.card .table th:nth-child(1), /* Question */
+.card .table td:nth-child(1) {
+  width: 25%;
+  min-width: 180px;
+}
+
+.card .table th:nth-child(2), /* Answer */
+.card .table td:nth-child(2) {
+  width: 25%;
+  min-width: 180px;
+}
+
+.card .table th:nth-child(3), /* Intent */
+.card .table td:nth-child(3) {
+  width: 20%;
+  min-width: 160px;
+}
+
+.card .table th:nth-child(4), /* Score */
+.card .table td:nth-child(4) {
+  width: 8%;
+  min-width: 60px;
+  text-align: center;
+}
+
+.card .table th:nth-child(5), /* Status */
+.card .table td:nth-child(5) {
+  width: 8%;
+  min-width: 60px;
+  text-align: center;
+}
+
+.card .table th:nth-child(6), /* Action */
+.card .table td:nth-child(6) {
+  width: 14%;
+  min-width: 130px;
+  text-align: center;
+}
+
+/* Wrap teks panjang */
+.card .table td {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Dropdown select */
+.card .table select {
+  width: 100%;
+  max-width: 200px;
+  padding: 8px 10px;
+  font-size: 12px;
+  background: #0a1224;
+  border: 1px solid #4c8dff;
+  border-radius: 8px;
+  color: #d9f7ff;
+  margin: 0;
+  cursor: pointer;
+}
+
+.card .table select:hover {
+  border-color: #00f0ff;
+}
+
+/* Tombol aksi */
+.card .table td:last-child {
+  white-space: nowrap;
+}
+
+.card .table td:last-child .btn {
+  display: inline-block;
+  margin: 2px 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  min-width: 36px;
+  line-height: 1;
+}
+
+.card .table td:last-child .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsif: layar kecil, scroll horizontal */
+@media (max-width: 768px) {
+  .card .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .card .table td,
+  .card .table th {
+    white-space: normal;
+  }
+  .card .table td:last-child {
+    white-space: normal;
+  }
+  .card .table td:last-child .btn {
+    margin: 2px;
+    padding: 4px 8px;
+  }
+}
+
+/* =========================
+   Q-META (SAME)
+========================= */
+.q-meta {
+  font-size: 12px;
+  color: #7fa6c7;
+  margin-top: 6px;
+}
+
+/* =========================
+   TREE VIEW (NEW - DARK THEME ADAPTED)
+========================= */
+.tree-container {
+  padding: 0.5rem 0;
+}
+
+.tree-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tree-header h3 {
+  margin: 0;
+  color: #d9f7ff;
+  font-size: 1.5rem;
+}
+
+.tree-category {
+  margin-bottom: 0.75rem;
+  border-left: 3px solid #4c8dff;
+  background: rgba(13, 23, 48, 0.6);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.tree-cat-header,
+.tree-intent-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background: #0d1730;
+  border-radius: 8px;
+  margin: 0.2rem 0;
+  transition: 0.2s;
+  border: 1px solid #2f6bff;
+}
+
+.tree-cat-header:hover,
+.tree-intent-header:hover {
+  background: #142142;
+  border-color: #4c8dff;
+}
+
+.toggle-icon {
+  width: 24px;
+  font-size: 14px;
+  color: #4c8dff;
+}
+
+.cat-name,
+.intent-name {
+  flex: 1;
+  font-weight: bold;
+  color: #d9f7ff;
+  margin-left: 8px;
+}
+
+.cat-actions,
+.intent-actions,
+.question-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: 0.2s;
+  color: #d9f7ff;
+}
+
+.btn-icon:hover {
+  background: #0a1224;
+  transform: scale(1.05);
+}
+
+.btn-icon.delete:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tree-intents {
+  margin-left: 2rem;
+  margin-top: 0.25rem;
+}
+
+.tree-questions {
+  margin-left: 2rem;
+  margin-top: 0.25rem;
+}
+
+.tree-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #2f6bff;
+  background: #0a1224;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.tree-question.empty {
+  color: #7fa6c7;
+  font-style: italic;
+  background: transparent;
+  border: none;
+}
+
+.question-text {
+  color: #d9f7ff;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* =========================
+   MODAL (NEW - DARK THEME)
+========================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0d1730;
+  border: 2px solid #4c8dff;
+  border-radius: 20px;
+  padding: 1.8rem;
+  width: 550px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #d9f7ff;
+  border-left: 4px solid #4c8dff;
+  padding-left: 12px;
+}
+
+.modal-body {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-body label {
+  font-weight: bold;
+  color: #b0d4ff;
+  margin-bottom: -4px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* =========================
+   RESPONSIVE (SAME + ENHANCED)
+========================= */
+@media (max-width: 768px) {
+  .admin-title {
+    font-size: 24px;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+
+  .tree-cat-header,
+  .tree-intent-header {
+    flex-wrap: wrap;
+  }
+
+  .cat-actions,
+  .intent-actions {
+    margin-top: 6px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .tree-intents,
+  .tree-questions {
+    margin-left: 1rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.2rem;
+  }
+}
+
+.intent-response {
+  background: #0a1224;
+  border-left: 3px solid #4c8dff;
+  padding: 8px 12px;
+  margin: 8px 0 12px 0;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.response-label {
+  font-weight: bold;
+  color: #7fa6c7;
+  margin-right: 8px;
+}
+
+.response-text {
+  color: #d9f7ff;
+  word-break: break-word;
+}

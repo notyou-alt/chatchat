@@ -1,0 +1,245 @@
+/* =========================
+   ROOT THEME (CYBER BLUE PREMIUM)
+========================= */
+:root {
+  --bg: #050914;
+  --bg2: #070f22;
+
+  --card: #0d1730;
+  --card2: #0a1224;
+
+  --blue: #3b82ff;
+  --blue2: #1d4ed8;
+
+  --cyan: #00f0ff;
+
+  --text: #d9f7ff;
+  --muted: #7fa6c7;
+
+  --border: #2f6bff;
+  --borderStrong: #4c8dff;
+}
+
+/* LIGHT MODE */
+body.light {
+  --bg: #eef3ff;
+  --bg2: #ffffff;
+
+  --card: #ffffff;
+  --card2: #f2f6ff;
+
+  --text: #0b1220;
+  --muted: #445;
+
+  --border: #4b6bff;
+  --borderStrong: #7aa2ff;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+
+  background: radial-gradient(
+    circle at center,
+    var(--bg),
+    var(--bg2)
+  );
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3, h4 {
+  color: var(--cyan);
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* =========================
+   GLOBAL BUTTON SYSTEM (FIX CONSISTENCY)
+========================= */
+button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  border: 2px solid var(--borderStrong);
+  border-radius: 12px;
+
+  padding: 10px 16px;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+}
+
+/* PRIMARY BUTTON */
+.btn-success,
+.adminButton,
+.nav-btn.active {
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: white;
+  border: 2px solid var(--cyan);
+}
+
+.btn-success:hover,
+.adminButton:hover,
+.nav-btn.active:hover {
+  filter: brightness(1.15);
+}
+
+/* =========================
+   INPUT SYSTEM
+========================= */
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+
+  background: var(--card2);
+  color: var(--text);
+
+  border: 2px solid var(--borderStrong);
+  border-radius: 12px;
+
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  transform: scale(1.01);
+}
+
+/* =========================
+   APP LAYOUT (CENTER PERFECT FIX)
+========================= */
+.app-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.app-box {
+  width: 480px;
+  padding: 30px;
+
+  background: var(--card);
+  border: 2px solid var(--borderStrong);
+  border-radius: 18px;
+
+  text-align: center;
+
+  transition: 0.3s;
+  transform: none;
+}
+
+.app-box:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  transform: none;
+}
+
+/* =========================
+   CHAT UI ELEMENTS (FIX UX)
+========================= */
+.maskot {
+  width: 140px;
+  height: 140px;
+  margin: 20px 0;
+  transition: 0.3s;
+}
+
+.maskot:hover {
+  transform: scale(1.05);
+}
+
+/* input row */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* RESPONSE BOX (AI CARD STYLE) */
+.response-box {
+  margin-top: 18px;
+  padding: 16px;
+
+  background: var(--card2);
+  border: 2px solid var(--borderStrong);
+  border-radius: 14px;
+
+  text-align: left;
+
+  animation: fadeIn 0.35s ease;
+}
+
+.response-box:hover {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   HEADER
+========================= */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   OPEN CORE BUTTON FIX POSITION
+========================= */
+
+.adminButton {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+
+  z-index: 999999;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: white;
+
+  border: 2px solid var(--cyan);
+
+  /* IMPORTANT FIX */
+  transform: none !important;
+}
+
+/* =========================
+   SMALL ANIMATION FEEL
+========================= */
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
